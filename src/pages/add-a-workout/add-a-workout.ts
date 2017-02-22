@@ -11,9 +11,11 @@ import {WorkoutService} from "../../app/service/workout-service";
     templateUrl: 'add-a-workout.html'
 })
 export class AddAWorkoutPage {
-    public title : String;
-    public note : String;
-    public type : String;
+    public workoutArea : String;
+    public Sets: String;
+    public Reps : String;
+    public Exercise: String;
+    public Weight: number;
     public result : any;
 
     constructor(public navCtrl: NavController, private workoutSrv:WorkoutService){
@@ -22,9 +24,12 @@ export class AddAWorkoutPage {
 
     onSubmit(){
         var workout = {
-            title: this.title,
-            note: this.note,
-            type: this.type
+            workoutArea : this.workoutArea,
+            Sets: this.Sets,
+            Reps: this.Reps,
+            Weight : this.Weight,
+            Exercise: this.Exercise
+
         }
 
         //add workout using service eg the database list

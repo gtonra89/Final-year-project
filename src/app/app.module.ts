@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import {WorkoutsPage} from'../pages/workouts/workouts';
 import {AddAWorkoutPage} from '../pages/add-a-workout/add-a-workout';
+import {WorkoutDetailsPage} from '../pages/workout-details/workout-details';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -14,6 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     AddAWorkoutPage,
     WorkoutsPage,
+    WorkoutDetailsPage,
     TabsPage
 
   ],
@@ -26,6 +28,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     AddAWorkoutPage,
     WorkoutsPage,
+    WorkoutDetailsPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
