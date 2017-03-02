@@ -14,7 +14,7 @@
                 <ion-item>
                     <ion-label color="primary" fixed>Exercise</ion-label>
                     <ion-select  [(ngModel)]="Exercise" name="Exercise" required>
-                         <ion-option type="text" *ngFor="let workout of workouts" required>{{workout.Exercise}}</ion-option>
+                         <ion-option type="text" *ngFor="let workout of workouts" [selected]="workout.Exercise == 'Bench Press'">{{workout.Exercise}}</ion-option>
                      </ion-select>
                 </ion-item>
             </ion-list>
