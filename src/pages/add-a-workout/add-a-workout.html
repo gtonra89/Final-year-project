@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>
-            Add a Workout
+        <ion-title >
+           Add a Workout
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -9,61 +9,36 @@
 <ion-content padding>
     <form (submit)="onSubmit()">
         <ion-list>
-            <ion-item>
-            <ion-label fixed>Workout Area</ion-label>
-                <ion-select [(ngModel)]="workoutArea" name="workoutArea">
-                    <ion-option value="Upper Body">Upper Body</ion-option>
-                    <ion-option value="Lower Body">Lower Body</ion-option>
-                    <ion-option value="Core">Core</ion-option>
-                    <ion-option value="Aerobic">Aerobic</ion-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Sets</ion-label>
-                <ion-input [(ngModel)]="Sets" type="number" placeholder="Sets" name="Sets"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label fixed>Reps</ion-label>
-                <ion-input [(ngModel)]="Reps" type="number" placeholder="Reps" name="Reps"></ion-input>
-            </ion-item>
+           
+           <ion-list>
+                <ion-item>
+                    <ion-label color="primary" fixed>Exercise</ion-label>
+                    <ion-select  [(ngModel)]="Exercise" name="Exercise" required>
+                         <ion-option type="text" *ngFor="let workout of workouts" required>{{workout.Exercise}}</ion-option>
+                     </ion-select>
+                </ion-item>
+            </ion-list>
 
 
+           <ion-item>
+                <ion-label color="secondary" fixed>Sets</ion-label>
+                <ion-input required [(ngModel)]="Sets" type="number" placeholder="Sets" name="Sets"></ion-input>
+            </ion-item>
+            
             <ion-item>
-                <ion-label fixed>Weight</ion-label>
-                <ion-input [(ngModel)]="Weight" type="number" name="Weight" placeholder="Weight in KG" step="0.01"></ion-input>
+                <ion-label color="secondary" fixed>Reps</ion-label>
+                <ion-input required  [(ngModel)]="Reps" type="number" placeholder="Reps" name="Reps"></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-label fixed>Exercise</ion-label>
-                <ion-select [(ngModel)]="Exercise" name="Exercise">
-                    <ion-option value="Squat">Squat</ion-option>
-                    <ion-option value="DeadLift">DeadLift</ion-option>
-                    <ion-option value="Bench Press">Bench Press</ion-option>
-                    <ion-option value="Goblet Squat">Goblet Squat</ion-option>
-                    <ion-option value="T-bar Row">T-bar Row</ion-option>
-                    <ion-option value="Overhead Press">Overhead Press</ion-option>
-                    <ion-option value="Sumo Deadlift">Sumo Deadlift</ion-option>
-                    <ion-option value="Hip Thrust">ip Thrust</ion-option>
-                    <ion-option value="Chin ups">Chin ups</ion-option>
-                    <ion-option value="Incline DB Press">Incline DB Press</ion-option>
-                    <ion-option value="DB Shoulder Press">DB Shoulder Press</ion-option>
-                    <ion-option value="Single Arm Rows">Single Arm Rows</ion-option>
-                    <ion-option value="Seal Row">eal Row</ion-option>
-                    <ion-option value="Lateral Raise">Lateral Raise</ion-option>
-                    <ion-option value="Tricep Press Down">Tricep Press Down</ion-option>
-                    <ion-option value="Bicep Cable curls">Bicep Cable curls</ion-option>
-                    <ion-option value="Wide Grip Lateral Pulldowns">ide Grip Lateral Pulldowns</ion-option>
-                    <ion-option value="Push ups">Push ups</ion-option>
-                    <ion-option value="Face Pulls">Face Pulls</ion-option>
-                    <ion-option value="Hammer Strength Chest Press">Hammer Strength Chest Press</ion-option>
-                    <ion-option value="Barbell Curls">Barbell Curls</ion-option>
-                    <ion-option value="Single Arm Extensions">Single Arm Extensions</ion-option>
-            </ion-select>
+                <ion-label color="secondary" fixed>Weight</ion-label>
+                <ion-input required [(ngModel)]="Weight" type="number" name="Weight" placeholder="Weight in KG" step="0.01"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+                <button ion-button color="green" type="submit" block>Add Workout</button>
             </ion-item>
 
-            <ion-item>
-                <button ion-button type="submit" block>Add Workout</button>
-            </ion-item>
         </ion-list>
     </form>
 </ion-content>
