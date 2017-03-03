@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import {NavController, List} from 'ionic-angular';
 import {WorkoutsPage} from '../workouts/workouts';
 import {WorkoutService} from "../../app/service/workout-service";
-
+import {AddAExercisePage} from '../add-a-exercise/add-a-exercise';
 @Component({
     selector: 'add-a-workout',
     templateUrl: 'add-a-workout.html'
@@ -18,6 +18,7 @@ export class AddAWorkoutPage {
     public result : any;
     public workouts : any;
     public Exercise : any;
+    public newExercise :any;
 
     constructor(public navCtrl: NavController, private workoutService:WorkoutService){
         
@@ -49,6 +50,22 @@ export class AddAWorkoutPage {
         
     }
 
+    onSubmit1(){
+        var AddExercise = {
+       Exercise : this.newExercise 
+    }
 
+        //add workout using service eg the database list
+        this.workoutService.addNewExercise(AddExercise).subscribe(data => {
+            this.result = data;
+        });
+
+        this.navCtrl.push(WorkoutsPage);
+        
+    }
+
+    navToAddExercise(){
+         this.navCtrl.push(AddAExercisePage);
+    }
 
 }

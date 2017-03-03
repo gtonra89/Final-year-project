@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title >
+           Add a Exercise
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-item><p>Simply add it to the list</p></ion-item>
+    <form (submit)="onSubmit1()">
+         <ion-list>
+
+            <ion-item>
+                <ion-label color="secondary" fixed>Add Exercise</ion-label>
+                <ion-input required [(ngModel)]="newExercise" type="text" placeholder="New Exercise" name="New Exercise"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button class="button button-balanced" ion-button  type="submit" >Add to List</button>
+            </ion-item>
+         </ion-list>
+    </form>
+</ion-content>

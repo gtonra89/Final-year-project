@@ -14,11 +14,10 @@
                 <ion-item>
                     <ion-label color="primary" fixed>Exercise</ion-label>
                     <ion-select  [(ngModel)]="Exercise" name="Exercise" required>
-                         <ion-option type="text" *ngFor="let workout of workouts" [selected]="workout.Exercise == 'Bench Press'">{{workout.Exercise}}</ion-option>
+                         <ion-option type="input" *ngFor="let workout of workouts" [selected]="workout.Exercise == 'Bench Press'">{{workout.Exercise}}</ion-option>
                      </ion-select>
                 </ion-item>
             </ion-list>
-
 
            <ion-item>
                 <ion-label color="secondary" fixed>Sets</ion-label>
@@ -36,9 +35,15 @@
             </ion-item>
             
             <ion-item>
-                <button ion-button color="green" type="submit" block>Add Workout</button>
+                <button ion-button color="green" type="submit" >Add Workout</button>
             </ion-item>
 
+            <ion-item><p>Click Add Exercise button if you cannot find 
+                    <br>The Exercise you wanted add it to the list</p></ion-item>
+            <ion-item>
+                <button ion-button colour="secondary" (click)="navToAddExercise()">Add Exercise</button>
+            </ion-item>
         </ion-list>
     </form>
+    
 </ion-content>
