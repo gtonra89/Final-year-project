@@ -11,7 +11,7 @@ import {AddAExercisePage} from '../add-a-exercise/add-a-exercise';
     templateUrl: 'add-a-workout.html'
 })
 export class AddAWorkoutPage {
-
+    //Declaring variables
     public Sets: String;
     public Reps : String;
     public Weight: number;
@@ -24,12 +24,24 @@ export class AddAWorkoutPage {
         
     }
 
+    /**
+     * on Init 
+     * Get the workout list
+     */
+     
     ngOnInit(){
-    
+        
     this.workoutService.getWorkout1().subscribe(workouts => {
       this.workouts = workouts;
       workouts.toString();
       console.log();
+    });
+  }
+  
+   ionViewWillEnter(){
+
+    this.workoutService.getWorkout1().subscribe(workouts => {
+      this.workouts = workouts;
     });
   }
 

@@ -12,7 +12,7 @@ import {AddAWorkoutPage} from '../add-a-workout/add-a-workout';
     templateUrl: 'add-a-exercise.html'
 })
 export class AddAExercisePage {
-
+    //Declaring Varibales 
     public Exercise : any;
     public newExercise :any;
     public result : any;
@@ -20,20 +20,22 @@ export class AddAExercisePage {
     constructor(public navCtrl: NavController, private workoutService:WorkoutService){
         
     }
+    /**
+     * When on Submit1 Clicked
+     * create a variable called AddExercise
+     * and populate it with the Var Exercise Object 
+     */
     onSubmit1(){
         var AddExercise = {
-       Exercise : this.newExercise 
-    }
+            Exercise : this.newExercise 
+        }     
 
-        //add workout using service eg the database list
+       //add workout using service eg the database list
         this.workoutService.addNewExercise(AddExercise).subscribe(data => {
             this.result = data;
         });
 
+        //redirect to this page after submit
         this.navCtrl.push(AddAWorkoutPage);
-        
     }
-
-
-
 }

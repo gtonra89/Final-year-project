@@ -68,4 +68,9 @@ export class WorkoutService{
         return this.http.post(this.WorkoutListUrl+'?apiKey='+this.WorkoutListApiKey, JSON.stringify(newExercise),{headers:headers}).map(res => res.json());
     }
 
+    deleteWorkout(workoutId){
+        return this.http.delete(this.WorkoutUrl+'/'+workoutId+'?apiKey='+this.WorkoutApiKey)
+                .map(res => res.json());
+    }
+
 }
