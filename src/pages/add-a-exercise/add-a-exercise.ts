@@ -29,12 +29,10 @@ export class AddAExercisePage {
         var AddExercise = {
             Exercise : this.newExercise 
         }     
-
        //add workout using service eg the database list
         this.workoutService.addNewExercise(AddExercise).subscribe(data => {
             this.result = data;
         });
-
         //redirect to this page after submit
         this.navCtrl.push(AddAWorkoutPage);
     }

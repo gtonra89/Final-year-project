@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+ 
 import { AboutPage } from '../about/about';
 import {AddAWorkoutPage} from "../add-a-workout/add-a-workout";
 import {AddAExercisePage} from "../add-a-exercise/add-a-exercise";

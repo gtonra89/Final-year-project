@@ -6,6 +6,7 @@ import {NavController, List} from 'ionic-angular';
 import {WorkoutsPage} from '../workouts/workouts';
 import {WorkoutService} from "../../app/service/workout-service";
 import {AddAExercisePage} from '../add-a-exercise/add-a-exercise';
+
 @Component({
     selector: 'add-a-workout',
     templateUrl: 'add-a-workout.html'
@@ -44,40 +45,26 @@ export class AddAWorkoutPage {
       this.workouts = workouts;
     });
   }
+   navToAddExercise(){
+         this.navCtrl.push(AddAExercisePage);
+    }
 
     onSubmit(){
         var workout = {
+            Exercise: this.Exercise,
             Sets: this.Sets,
             Reps: this.Reps,
-            Weight : this.Weight,
-            Exercise: this.Exercise
+            Weight : this.Weight
         }
-
         //add workout using service eg the database list
         this.workoutService.addWorkout(workout).subscribe(data => {
             this.result = data;
         });
-
         this.navCtrl.push(WorkoutsPage);
         
-    }
-
-    onSubmit1(){
-        var AddExercise = {
-       Exercise : this.newExercise 
-    }
-
-        //add workout using service eg the database list
-        this.workoutService.addNewExercise(AddExercise).subscribe(data => {
-            this.result = data;
-        });
-
-        this.navCtrl.push(WorkoutsPage);
+        this.navCtrl.popToRoot();
+        
         
     }
-
-    navToAddExercise(){
-         this.navCtrl.push(AddAExercisePage);
-    }
-
+   
 }
