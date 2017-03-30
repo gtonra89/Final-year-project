@@ -10,36 +10,38 @@
     <form (submit)="onSubmit()">
         <ion-list>
            <ion-list>
-                <ion-item>
+                <ion-item text-center>
                     <ion-label color="primary" fixed>Exercise</ion-label>
                     <ion-select  [(ngModel)]="Exercise" name="Exercise" required>
                          <ion-option  type="input" *ngFor="let workout of workouts" [selected]="workout.Exercise == 'Bench Press'">{{workout.Exercise}}</ion-option>
                      </ion-select>
                 </ion-item>
             </ion-list>
-           <ion-item>
-                <ion-label color='item' fixed>Sets</ion-label>
-                <ion-input required [(ngModel)]="Sets" type="number" min="0" placeholder="Sets" name="Sets"></ion-input>
+           <ion-item text-center>
+                <ion-label  color='item' fixed>Sets</ion-label>
+                <ion-input name-center required [(ngModel)]="Sets" type="number" min="0" placeholder="Sets" name="Sets"></ion-input>
            </ion-item>
             
-            <ion-item>
+            <ion-item text-center>
                 <ion-label color='item1' fixed>Reps</ion-label>
                 <ion-input required  [(ngModel)]="Reps" type="number" min="0" placeholder="Reps" name="Reps"></ion-input>
             </ion-item>
 
-            <ion-item>
+            <ion-item text-center>
                 <ion-label color='item2' fixed>Weight</ion-label>
                 <ion-input required [(ngModel)]="Weight" type="number" min="0" name="Weight" placeholder="Weight in KG" step="0.01"></ion-input>
             </ion-item>
             
-            <ion-item>
-                <button ion-button color="green" type="submit" >Add Workout</button>
+            <ion-item text-center>
+                <button ion-button color="green" type="submit" block >Add Workout</button>
             </ion-item>
         </ion-list>
     </form>
-         <ion-item><p>Click Add Exercise button if you cannot find 
-                    <br>The Exercise you wanted add it to the list</p></ion-item>
-            <ion-item>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+         <ion-item text-center><p>Click Add Exercise button if you cannot find 
+                    <br>The Exercise you wanted add it to the list</p>
                 <button ion-button color="dark" (click)="navToAddExercise()">Add Exercise</button>
             </ion-item>
 </ion-content>

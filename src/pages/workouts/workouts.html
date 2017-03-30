@@ -6,15 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="workoutbg">
-  
-  
-
+<ion-content class='workoutbg'>
     <ion-list>
-      <ion-item color="item" *ngFor="let workout of workouts" (click)="workoutSelected($event, workout)">
-        {{workout.Exercise}}
+      <ion-item text-center color="item" *ngFor="let workout of workouts" (click)="workoutSelected($event, workout)">
+          {{workout.Exercise}}<br>
+          Click for info
       </ion-item>
     </ion-list>
-    
 </ion-content>
 

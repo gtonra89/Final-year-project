@@ -19,6 +19,7 @@ export class AddAWorkoutPage {
     public result : any;
     public workouts : any;
     public Exercise : any;
+     public Exercise1 : any;
     public newExercise :any;
 
     constructor(public navCtrl: NavController, private workoutService:WorkoutService){
@@ -51,7 +52,7 @@ export class AddAWorkoutPage {
 
     onSubmit(){
         var workout = {
-            Exercise: this.Exercise,
+            Exercise : this.Exercise,
             Sets: this.Sets,
             Reps: this.Reps,
             Weight : this.Weight
@@ -61,8 +62,7 @@ export class AddAWorkoutPage {
             this.result = data;
         });
         this.navCtrl.push(WorkoutsPage);
-        
-        this.navCtrl.popToRoot();
+        this.navCtrl.popToRoot(WorkoutsPage);
         
         
     }
