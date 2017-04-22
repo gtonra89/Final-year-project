@@ -1,5 +1,5 @@
 # Final-year-project
-##Workout App Powered By Ionic 2 angular 2 &amp; MLab 
+## Workout App Powered By Ionic 2 angular 2 &amp; MLab 
 
 ### Welcome to My Final-Year-Project Design Document!
 <h2>Document Navigation</h2>
